@@ -6,7 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^$', 'Pessoas.views.index'),
-	url(r'^C$', 'Pessoas.views.cadastro'),
+	url(r'^Pessoa/Cadastro/$', 'Pessoas.views.cadastro_pessoa'),
+	url(r'^Jogo/Cadastro/$', 'Pessoas.views.cadastro_jogo'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 )
