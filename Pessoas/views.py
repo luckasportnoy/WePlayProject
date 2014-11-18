@@ -32,7 +32,7 @@ def cadastro_Jogo_validar(request):
 			jogo = Jogo(
 				nome = form.data['nome'],
 				genero = form.data['genero'],
-				data_lancamento = form.data['data_lancamento'],
+				data_Lancamento = form.data['data_Lancamento'],
 				imagem = form.data['imagem'],
 			)
 		jogo.save()

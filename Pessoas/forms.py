@@ -1,6 +1,6 @@
 # coding: utf-8
 from django import forms
-from Pessoas.models import Pessoa
+from Pessoas.models import Pessoa, Jogo
 
 class cadastroPessoaForm(forms.Form):
 	nickname = forms.CharField(max_length=100, required=True)
@@ -9,11 +9,9 @@ class cadastroPessoaForm(forms.Form):
 	email = forms.CharField(max_length=100, required=True)
 	senha = forms.CharField(widget=forms.PasswordInput, required=True)
 
-class cadastroJogoForm(forms.Form):
-    nome = models.CharField(max_length=200)
-    genero = models.CharField(max_length=200)
-    data_lancamento = models.DateTimeField()
-    imagem = models.ImageField(upload_to='GameImages')
+class cadastroJogoForm(forms.ModelForm):
+	class Meta:
+		model = Jogo
 
 class LoginForm(forms.Form):
 	login = forms.CharField(max_length=100, required=True)
