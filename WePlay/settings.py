@@ -12,6 +12,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DATABASES = {}
 
+AUTH_USER_MODEL = 'Pessoas.Pessoa'
+
 SECRET_KEY = 'y!)+t3bye%3!n8!br@d)8feks88^%@(^hzpbb2s@in!oei92(v'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

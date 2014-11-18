@@ -1,7 +1,10 @@
+# coding: utf-8
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, logout, login as meu_login
 from django.contrib.auth.decorators import login_required
+from Pessoas.models import Pessoa
+from Pessoas.forms import cadastroForm
 
 def index(request):
 	return HttpResponse('Index')
@@ -20,4 +23,8 @@ def cadastro_validar(request):
 		pessoa.set_password(form.data['senha'])
 		pessoa.save()
 
+		return render(request,'cadastro.html',{'form':form})
+
+def cadastro(request):
+	form = cadastroForm()
 	return render(request,'cadastro.html',{'form':form})
