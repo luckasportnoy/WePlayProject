@@ -1,11 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-class Pessoa(models.Model):
-    nome = models.CharField(max_length=200)
-    sobrenome = models.CharField(max_length=200)
-    nickname = models.CharField(max_length=200)
-    password = models.CharField(max_length=18)
-    
+
+class Pessoa(AbstractUser):
+    games = models.ForeignKey(Jogo)
+
 class Jogo(models.Model):
     nome = models.CharField(max_length=200)
     genero = models.CharField(max_length=200)
